@@ -13,7 +13,7 @@ class SegDataset(Dataset):
         
         self.moving_template = np.load(template_path)  
         self.moving_template = torch.tensor(self.moving_template, dtype=torch.float32)
-        self.moving_template = self.moving_template.permute(3, 0, 1, 2)  # (5, D, H, W)
+        # self.moving_template = self.moving_template.permute(3, 0, 1, 2)  # (5, D, H, W)
 
 
         self.moving_template = F.interpolate(
@@ -31,7 +31,7 @@ class SegDataset(Dataset):
 
         fixed_map = np.load(self.subject_paths[idx])  # (D, H, W, 5)
         fixed_map = torch.tensor(fixed_map, dtype=torch.float32)
-        fixed_map = fixed_map.permute(3, 0, 1, 2)  # (5, D, H, W)
+        # fixed_map = fixed_map.permute(3, 0, 1, 2)  # (5, D, H, W)
 
         # Resize fixed map
         fixed_map = F.interpolate(

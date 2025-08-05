@@ -6,7 +6,7 @@ from tqdm import tqdm
 # Txt file where each line points to a subject segmentation map 
 input_txt = "/local/scratch/v_karthik_mohan/template.txt"
 
-labels = [0, 1, 2, 3]  
+labels = [0, 1, 2, 3, 4]
 # Labels in thisc case are Background, Cortex, Subcortical GM, White Matter, CSF
 
 def to_one_hot(segmentation, labels):
